@@ -31,7 +31,7 @@ It has these top-level messages:
 */
 package descriptor
 
-import proto "github.com/golang/protobuf/proto"
+import proto "github.com/MenInBack/protobuf/proto"
 import fmt "fmt"
 import math "math"
 

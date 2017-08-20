@@ -36,12 +36,11 @@ package grpc
 
 import (
 	"fmt"
-	"path"
 	"strconv"
 	"strings"
 
-	pb "github.com/golang/protobuf/protoc-gen-go/descriptor"
-	"github.com/golang/protobuf/protoc-gen-go/generator"
+	pb "github.com/MenInBack/protobuf/protoc-gen-go/descriptor"
+	"github.com/MenInBack/protobuf/protoc-gen-go/generator"
 )
 
 // generatedCodeVersion indicates a version of the generated code.
@@ -130,8 +129,8 @@ func (g *grpc) GenerateImports(file *generator.FileDescriptor) {
 		return
 	}
 	g.P("import (")
-	g.P(contextPkg, " ", strconv.Quote(path.Join(g.gen.ImportPrefix, contextPkgPath)))
-	g.P(grpcPkg, " ", strconv.Quote(path.Join(g.gen.ImportPrefix, grpcPkgPath)))
+	g.P(contextPkg, " ", strconv.Quote(contextPkgPath))
+	g.P(grpcPkg, " ", strconv.Quote(grpcPkgPath))
 	g.P(")")
 	g.P()
 }
